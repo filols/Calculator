@@ -80,7 +80,7 @@ function addDecimal() {
 
 function clear() {
     DISPLAY.textContent = "0";
-    operator = (a, b) => a + b;
+    operator = undefined;
     operandOffDisplay = 0;
     operating = false;
     pendingOperand = false;
