@@ -33,9 +33,9 @@ body {
   grid-column: 1 / -1;
   text-align: end;
   margin-top: auto;
-  padding: 0 8%;
+  padding: 0 8% 0 2%;
   font-size: 4em;
-  overflow: hidden;
+  overflow-x: auto;
 }
 
 #zero {
