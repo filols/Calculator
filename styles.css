@@ -1,0 +1,93 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(90deg, #C9D6FF, #E2E2E2);
+  padding: 0;
+  margin: 0;
+}
+
+#container {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+#calculator {
+  width: 400px;
+  color: white;
+  background-color: rgb(63, 63, 63);
+  border: 3px solid black;
+  border-radius: 2%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 100px;
+  grid-auto-rows: 80px;
+}
+
+#calculator #display {
+  grid-column: 1 / -1;
+  text-align: end;
+  margin-top: auto;
+  padding: 0 8%;
+  font-size: 4em;
+  overflow: hidden;
+}
+
+#zero {
+  grid-column: span 2;
+}
+
+button {
+  color: white;
+  font-size: 2em;
+  font-family: monospace;
+  border: none;
+  margin: 1px;
+}
+
+button.clear, 
+button.sign, 
+button.percent {
+  font-size: 2em;
+  font-family: Helvetica;
+  background-color: rgb(85, 85, 85);
+}
+
+button#zero {
+  border-radius: 0 0 0 8px;
+}
+
+button.equals {
+  border-radius: 0 0 8px 0;
+}
+
+button.operator,
+button.equals {
+  background-color: rgb(249, 168, 17);
+}
+
+button.clear:active, 
+button.sign:active, 
+button.percent:active {
+  background-color: rgba(244, 243, 243, 0.219);
+}
+
+button.operand,
+button.decimal {
+  background-color: rgba(244, 243, 243, 0.219);
+}
+
+button.operand:active,
+button.decimal:active {
+  background-color: rgb(206, 209, 209);
+}
+
+button.operator:active,
+button.equals:active {
+  background-color: rgba(249, 168, 17, 0.746);
+}
