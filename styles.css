@@ -30,6 +30,7 @@ body {
 }
 
 #calculator #display {
+  font-family: Helvetica;
   grid-column: 1 / -1;
   text-align: end;
   margin-top: auto;
@@ -48,13 +49,13 @@ button {
   font-family: monospace;
   border: none;
   margin: 1px;
+  font-family: Helvetica;
 }
 
 button.clear, 
 button.sign, 
 button.percent {
   font-size: 2em;
-  font-family: Helvetica;
   background-color: rgb(85, 85, 85);
 }
 
@@ -77,17 +78,18 @@ button.percent:active {
   background-color: rgba(244, 243, 243, 0.219);
 }
 
-button.operand,
+button.digit,
 button.decimal {
   background-color: rgba(244, 243, 243, 0.219);
 }
 
-button.operand:active,
+button.digit:active,
 button.decimal:active {
   background-color: rgb(206, 209, 209);
 }
 
 button.operator:active,
-button.equals:active {
+button.equals:active,
+button.operator:focus {
   background-color: rgba(249, 168, 17, 0.746);
 }
