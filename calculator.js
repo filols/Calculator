@@ -16,10 +16,10 @@ addButtonListeners();
   on the display will be the second operand.
 */
 function operate() {
-  if (!operator) return;
-
   let operand = parseFloat(DISPLAY.textContent);
 
+  if (!operator) return;
+  if (!operandOffDisplay) operandOffDisplay = operand;
   if (!operating) {
     DISPLAY.textContent = operator(operand, prevOperandOperatedOver)
   } else {
