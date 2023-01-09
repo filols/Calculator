@@ -90,9 +90,7 @@ function percent() {
 function addButtonListeners() {
   const buttons = document.querySelectorAll("#calculator button");
 
-  console.log(buttons);
   buttons.forEach(button => {
-    console.log(button.classList);
     if (button.classList.contains('digit')) {
       button.addEventListener('click', () => addDigit(button.value));
     } else if (button.classList.contains('decimal')) {
