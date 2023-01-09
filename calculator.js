@@ -37,10 +37,6 @@ function operate() {
 }
 
 function changeOperator(newOperator) {
-  if (operating && !pendingOperand) {
-    operate()
-  }
-
   switch (newOperator) {
     case '+': 
       operator = ((a, b) => a + b)
@@ -113,7 +109,10 @@ function addButtonListeners() {
     } else if (button.classList.contains('sign')) {
       button.addEventListener('click', () => changeSign());
     } else if (button.classList.contains('operator')) {
-      button.addEventListener('click', () => changeOperator(button.value));
+      button.addEventListener('click', () => {
+        if (operating && !pendingOperand) operate();
+        changeOperator(button.value);
+      })
     } else if (button.classList.contains('equals')) {
       button.addEventListener('click', () => operate());
     }
