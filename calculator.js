@@ -13,12 +13,7 @@ addButtonListeners();
   been no new operator given. 
   
   For the other case: naturally, if an operator has been given, the value 
-  on the display will be the second operand. 
-  
-  In hindsight, an implementation with more allocated variables would 
-  have made for a cleaner rule-based solution.
-
-  Breaks on div by zero.
+  on the display will be the second operand.
 */
 function operate() {
   if (!operator) return;
