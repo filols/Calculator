@@ -2,7 +2,8 @@ const DISPLAY = document.querySelector('#display');
 let operator;
 let operandOffDisplay = 0;
 let prevOperandOperatedOver;
-let operating, pendingOperand;
+let pendingOperand = true;
+let operating = false;
 addButtonListeners();
 
 /*
@@ -49,14 +50,12 @@ function changeOperator(newOperator) {
 
   operating = true;
   pendingOperand = true;
+  operandOffDisplay = parseFloat(DISPLAY.textContent);
 }
 
 function addDigit(digit) {
   if (pendingOperand){
     pendingOperand = false;
-    operandOffDisplay = parseFloat(DISPLAY.textContent);
-    DISPLAY.textContent = digit;
-  } else if (DISPLAY.textContent === "0") {
     DISPLAY.textContent = digit;
   } else {
     DISPLAY.textContent += digit;
@@ -74,7 +73,8 @@ function clear() {
     operator = undefined;
     operandOffDisplay = 0;
     operating = false;
-    pendingOperand = false;
+    pendingOperand = true;
+    prevOperandOperatedOver = undefined;
 }
 
 function changeSign() {
