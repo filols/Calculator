@@ -22,10 +22,10 @@ function operate() {
   if (!operator) return;
   if (!operandOffDisplay) operandOffDisplay = operand;
   if (!operating) {
-    DISPLAY.textContent = operator(operand, prevOperandOperatedOver)
+    DISPLAY.textContent = operator(operand, operandOffDisplay)
   } else {
     DISPLAY.textContent = operator(operandOffDisplay, operand);
-    prevOperandOperatedOver = operand;
+    operandOffDisplay = operand;
   }
 
   operating = false;
@@ -74,7 +74,6 @@ function clear() {
     operandOffDisplay = 0;
     operating = false;
     pendingOperand = true;
-    prevOperandOperatedOver = undefined;
 }
 
 function changeSign() {
@@ -114,7 +113,6 @@ function addButtonListeners() {
   // Only works for numbers.
   window.addEventListener('keydown', e => {
     buttons.forEach(button => {
-      console.log(e.key)
       const dataKey = button.getAttribute('data-key');
       if (dataKey === e.key) {
         e.stopPropagation();
