@@ -20,7 +20,6 @@ function operate() {
   let operand = parseFloat(DISPLAY.textContent);
 
   if (!operator) return;
-  if (!operandOffDisplay) operandOffDisplay = operand;
   if (!operating) {
     DISPLAY.textContent = operator(operand, operandOffDisplay)
   } else {
